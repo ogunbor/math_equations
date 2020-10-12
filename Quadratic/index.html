@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MatLab-Welcome</title>
+    <script src="quadratic.js"></script>
+    <script src="areaofshapes.js"></script>
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="quadratic.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" integrity="sha384-xxzQGERXS00kBmZW/6qxqJPyxW3UR0BPsL4c8ILaIWXva5kFi7TxkIIaMiKtqV1Q" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <!-- Navbar content -->
+        <a class="navbar-brand" href="#">MatLab</a>
+    </nav>
+    <div class="jumbotron">
+        <div class="container">
+            <h1><strong>MatLab</strong></h1>
+            <h4><em>Solutions to your math problems at your finger tips!</em></h4>
+            <p>Let your machine solve your complex math problems in few clicks!</p>
+            <hr class="my-4">
+            <p>We add up new formulae frequently, so check us often!</p>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="quadratic-equation">
+            <h2><em>1) Quadratic Equation:</em></h2>
+            <p>Please enter the coefficients <strong>a</strong>, <strong>b</strong> and <strong>c</strong> of a quadratic equation of the form <strong> 
+        ax<sup>2</sup> + bx + c = 0</strong>, then click <strong>calculate</strong> to get answer</p>
+
+            <form name="input_form" action="javascript:validate();">
+                a: <input type="text" name="aterm" size="5" required> b: <input type="text" name="bterm" size="5" required> c: <input type="text" name="cterm" size="5" required>
+                <br><br>
+                <!-- <button class="container-fluid" type="button" class="btn btn-secondary">Calculate</button> -->
+                <input type="submit" value="Calculate">
+            </form>
+            <p id="output_text" /p>
+        </div>
+        <hr class="my-4">
+
+
+        <!-- Area of shapes -->
+        <div class="Area of plane shapes">
+            <h2><em> 2) Area of Plane Shapes:</em></h2>
+            <!-- start of code -->
+            <form action="javascript:calculateArea()" onchange="javascript:updateForm()">
+
+                <label for="id_shapes">Select a shape</label>
+                <select id="id_shapes">
+                    <option value="circle" selected>Circle</option>
+                    <option value="triangle">Triangle</option>
+                    <option value="square">Square</option>
+                    <option value="rectangle">Rectangle</option>
+                </select>
+
+                <br><br>
+                <div id="id_inputs_circle">
+                    <label for="id_radius">Radius</label>
+                    <input id="id_radius" type="number" min="0" step="any">
+                    <h2><em>A = &Pi;r<sup>2</sup></em></h2>
+                </div>
+                <div id="id_inputs_triangle" hidden>
+                    <label for="id_base">Base</label>
+                    <input id="id_base" type="number" min="0" step="any">
+                    <label for="id_height">Height</label>
+                    <input id="id_height" type="number" min="0" step="any">
+                    <h2><em>A = <sup>bh</sup>&frasl;<sub>2</sub></em></h2>
+                </div>
+
+                <div id="id_inputs_square" hidden>
+                    <label for="id_side">Side</label>
+                    <input id="id_side" type="number" min="0" step="any">
+                    <h2><em>A = s<sup>2</sup></em></h2>
+                </div>
+                <div id="id_inputs_rectangle" hidden>
+                    <label for="id_length">Length</label>
+                    <input id="id_length" type="number" min="0" step="any">
+                    <label for="id_width">Width</label>
+                    <input id="id_width" type="number" min="0" step="any">
+                    <h2><em>A = lw</em></h2>
+                </div>
+
+                <input type="submit" value="Calculate Area">
+                <p id="id_output"></p>
+            </form>
+            <!-- end of code -->
+        </div>
+        <hr class="my-4">
+
+
+
+
+
+</body>
+
+</html>
